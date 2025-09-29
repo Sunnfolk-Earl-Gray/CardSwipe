@@ -1,61 +1,117 @@
+using System.Collections;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public PlayerMovData Data;
-    public Rigidbody2D RB;
+    public PlayerMovData data;
+    public Rigidbody2D Rb { get; private set; }
     public bool isDashing;
+    public bool canDash;
     public bool isStun;
     public bool isFacingRight;
     private Vector2 _moveInput;
-    public InputSystem_Actions Actions;
-    
+    private InputSystem_Actions _actions;
     private void Awake()
     {
-        RB = GetComponent<Rigidbody2D>();
+        Rb = GetComponent<Rigidbody2D>();
+        _actions = new InputSystem_Actions();
+        _actions.Enable();
     }
-
+    
     private void Start()
     {
         isFacingRight = true;
+        canDash = true;
     }
 
     private void Update()
     {
         #region INPUT HANDLER
-        _moveInput.x = Input.GetAxisRaw("Horizontal");
-        _moveInput.y = Input.GetAxisRaw("Vertical");
+
+        _moveInput = _actions.Player.Move.ReadValue<Vector2>();
 
         if (_moveInput.x != 0) CheckDirectionToFace(_moveInput.x > 0);
 
-        if(Actions.Player.Jump.WasPressedThisFrame())
+        if((_actions.Player.Jump.WasPressedThisFrame() || _actions.Player.Sprint.WasPressedThisFrame() || _actions.Player.Interact.WasPressedThisFrame()) && canDash)
         {
-            //Dash();
+                StartCoroutine(Dash());
         }
         #endregion
     }
 
     private void FixedUpdate()
     {
-      
+        if (!isDashing)
+        {
+            Run(1);
+        }
     }
     
     private void Run(float lerpAmount)
     {
-        //calc the direction we want to move in and our desired velocity
-        float targetSpeed = _moveInput.x * Data.RunMaxSpeed;
-        //We can reduce are control using Lerp() this smooths changes to are direction and speed
-        targetSpeed = Mathf.Lerp(RB.linearVelocity.x, targetSpeed, lerpAmount);
+        if (data == null)
+        {
+            Debug.LogError("PlayerMovData is not assigned.");
+            return;
+        }
 
-        #region Calculate AccelRate
-        float accelRate;
+        Vector2 targetSpeed = new Vector2(
+            _moveInput.x * data.runMaxSpeed,
+            _moveInput.y * data.runMaxSpeed
+        );
 
-        //Gets an acceleration value based on if we are accelerating (includes turning) 
-        //or trying to decelerate (stop).
-        accelRate = (Mathf.Abs(targetSpeed) > 0.01f) ? Data.RunAccelAmount : Data.RunDeccelAmount;
+        Vector2 currentVelocity = Rb.linearVelocity;
+        targetSpeed = Vector2.Lerp(currentVelocity, targetSpeed, lerpAmount);
 
-        #endregion
+        float accelRateX = Mathf.Abs(targetSpeed.x) > 0.01f ? data.runAccelAmount : data.runDeccelAmount;
+        float accelRateY = Mathf.Abs(targetSpeed.y) > 0.01f ? data.runAccelAmount : data.runDeccelAmount;
+
+        if (data.doConserveMomentum &&
+            Mathf.Abs(currentVelocity.x) > Mathf.Abs(targetSpeed.x) &&
+            Mathf.Sign(currentVelocity.x) == Mathf.Sign(targetSpeed.x) &&
+            Mathf.Abs(targetSpeed.x) > 0.01f)
+        {
+            accelRateX = 0;
+        }
+
+        if (data.doConserveMomentum &&
+            Mathf.Abs(currentVelocity.y) > Mathf.Abs(targetSpeed.y) &&
+            Mathf.Sign(currentVelocity.y) == Mathf.Sign(targetSpeed.y) &&
+            Mathf.Abs(targetSpeed.y) > 0.01f)
+        {
+            accelRateY = 0;
+        }
+
+        float speedDifX = targetSpeed.x - currentVelocity.x;
+        float speedDifY = targetSpeed.y - currentVelocity.y;
+
+        float movementX = speedDifX * accelRateX;
+        float movementY = speedDifY * accelRateY;
+
+        Vector2 movement = new Vector2(movementX, movementY);
+
+        if (float.IsNaN(movement.x) || float.IsNaN(movement.y))
+        {
+            Debug.LogError($"[NaN] movement={movement}, targetSpeed={targetSpeed}, currentVelocity={currentVelocity}");
+            return;
+        }
+
+        Rb.AddForce(movement, ForceMode2D.Force);
     }
+
+    IEnumerator Dash()
+    {
+        Vector2 dashDirection = new Vector2(_moveInput.x, _moveInput.y).normalized;
+        canDash = false;
+        isDashing = true;
+        Rb.linearVelocity = dashDirection * data.dashSpeed;
+        yield return new WaitForSeconds(data.dashDuration);
+        isDashing = false;
+        yield return new WaitForSeconds(data.dashCooldown);
+        canDash = true;
+    }
+    
 
     private void Turn()
     {
@@ -72,14 +128,19 @@ public class PlayerMovement : MonoBehaviour
         {
             Turn();
         }
-    }
+    }   
 
     public bool CanDash()
     {
-        if (Data.DashCooldown == 0)
+        if (data.dashCooldown == 0)
         {
             return true;
         }
         return false; //might fuck with dash.
+    }
+
+    private void OnDisable()
+    {
+        _actions.Disable();
     }
 }
