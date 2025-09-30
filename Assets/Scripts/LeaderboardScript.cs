@@ -41,6 +41,7 @@ public class LeaderboardScript : MonoBehaviour
       {
          score.scoreInt = PlayerPrefs.GetInt(score.ScoreIndex);
       }
+      LevelManager.Instance.LoadNextLevel();
    }
    
    

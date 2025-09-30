@@ -10,16 +10,18 @@ public class LevelManager : MonoBehaviour
     
     [SerializeField] private bool _fading;
     [SerializeField] private RawImage _fade;
-
+    public static LevelManager Instance;
     private void Awake()
     {
+        if (Instance == null) Instance = this;
+        else if (Instance != this) Destroy(this);
+        
         _currentLevel = _levels[0];
         _currentLevel.SpawnEnemies();
     }
 
     public void LoadNextLevel()
     {
-        _currentLevel = _levels[_levels.IndexOf(_currentLevel)+1];
         StartCoroutine(fade(2));
     }
 
@@ -33,6 +35,8 @@ public class LevelManager : MonoBehaviour
                 _fade.color += new Color(0, 0, 0, 0.01f * Mathf.Sign(time));
                 yield return new WaitForSeconds(time / 100);
             }
+            _currentLevel.UnLoad();
+            _currentLevel = _levels[_levels.IndexOf(_currentLevel)+1];
             _currentLevel.SpawnEnemies();
             _fade.color = new Color(0,0,0, 0.5f + (Mathf.Sign(time)/2));
             while (_fade.color.a <= 1 && _fade.color.a >= 0)
@@ -40,6 +44,7 @@ public class LevelManager : MonoBehaviour
                 _fade.color += new Color(0, 0, 0, 0.01f * Mathf.Sign(-time));
                 yield return new WaitForSeconds(time / 100);
             }
+            _currentLevel.ActivateLevel();
             _fading = false;
         }
     }
