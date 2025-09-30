@@ -20,7 +20,7 @@ public class CharacterSelect : MonoBehaviour
    {
       if (_moveDelay <= 0)
       {
-         _moveDelay = 0.1f;
+         _moveDelay = 0.2f;
          if (_actions.Player.Move.ReadValue<Vector2>().x > 0)
          {
             if (_coinPoses.IndexOf(_currentPos) == _coinPoses.Count - 1) _currentPos = _coinPoses[0];
@@ -35,5 +35,10 @@ public class CharacterSelect : MonoBehaviour
          }
       }
       _moveDelay -= Time.deltaTime;
+   }
+
+   private void OnDisable()
+   {
+      _actions.Disable();
    }
 }
