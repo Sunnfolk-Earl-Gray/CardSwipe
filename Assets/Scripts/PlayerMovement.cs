@@ -116,6 +116,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator Dash()
     {
+        gameObject.GetComponent<PlayerAudioManager>().PlaySound("Dash");
         Vector2 dashDirection = new Vector2(_moveInput.x, _moveInput.y).normalized;
         if (dashDirection != Vector2.zero)
         {

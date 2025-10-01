@@ -3,6 +3,7 @@ using TMPro;
 using Unity.Mathematics;
 
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -11,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text scoreText;
     public Animator healthAnim;
+    [SerializeField] private PlayerAudioManager _audioManager;
     private void Start()
     {
         health = maxHealth;
@@ -22,10 +24,11 @@ public class PlayerManager : MonoBehaviour
         health += amount;
         healthAnim.Play("HPAnimation"); 
         healthText.text = health.ToString();
+        if (amount < 0) _audioManager.PlaySound("Damaged");
         if (health <= 0)
         {
+            _audioManager.PlaySound("Death");
             gameObject.SetActive(false);
         }
-
     }
 }
