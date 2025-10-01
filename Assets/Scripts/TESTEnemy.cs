@@ -35,6 +35,7 @@ public class TESTEnemy : MonoBehaviour
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
+        player = GameObject.FindGameObjectWithTag("Player").transform;
         ChangeState(_enemyState = EnemyState.Chasing);
         _playerMovement = player.GetComponent<PlayerMovement>();
         _enemy = gameObject.GetComponent<Transform>();
@@ -82,7 +83,7 @@ public class TESTEnemy : MonoBehaviour
         var heading = target.position - transform.position;
         var distance = heading.magnitude;
         heading = heading / distance;
-        if (distance >= attackDistance) rb.linearVelocity = heading * speed * distance;
+        if (distance >= attackDistance) rb.linearVelocity = heading * speed;
         else if (_attackCooldownTimer <= 0)
         {
             ChangeState(EnemyState.Attack);
@@ -121,6 +122,7 @@ public class TESTEnemy : MonoBehaviour
             if (scoreAppear != null)
             {
                 scoreAppear.Setup(score);
+                LeaderboardScript.instance.currentScore++;
             }
             else
             {

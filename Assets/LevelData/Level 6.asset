@@ -12,7 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71521ada6cfa684d9d0503e95f85ce4, type: 3}
   m_Name: Level 6
   m_EditorClassIdentifier: Assembly-CSharp::LevelScript
-  Enemies: []
-  _spawnedEnemies: []
-  EnemySpawns: []
-  LevelSprite: {fileID: 0}
+  Enemies:
+  - {fileID: 6755025500979334045, guid: 6f67f806da9b18543853368a3f34afa0, type: 3}
+  - {fileID: 6755025500979334045, guid: 6f67f806da9b18543853368a3f34afa0, type: 3}
+  - {fileID: 6755025500979334045, guid: 6f67f806da9b18543853368a3f34afa0, type: 3}
+  - {fileID: 6755025500979334045, guid: 6f67f806da9b18543853368a3f34afa0, type: 3}
+  - {fileID: 6755025500979334045, guid: 6f67f806da9b18543853368a3f34afa0, type: 3}
+  - {fileID: 6755025500979334045, guid: 6f67f806da9b18543853368a3f34afa0, type: 3}
+  - {fileID: 6755025500979334045, guid: 6f67f806da9b18543853368a3f34afa0, type: 3}
+  - {fileID: 6755025500979334045, guid: 6f67f806da9b18543853368a3f34afa0, type: 3}
+  spawnedEnemies: []
+  EnemySpawns:
+  - {x: -7.5622563, y: 3.0321512, z: 0}
+  - {x: 10.716446, y: -4.317018, z: 0}
+  - {x: 6.03236, y: 4.0551124, z: 0}
+  - {x: 8.428243, y: -0.5212934, z: 0}
+  - {x: 1.9674352, y: 3.8666725, z: 0}
+  - {x: -7.4545755, y: -3.3748167, z: 0}
+  - {x: -3.362731, y: 3.705152, z: 0}
+  - {x: 4.9555583, y: -3.670937, z: 0}
+  LevelSprite: {fileID: 360882744743491486, guid: 515214570e0e6724ead15cc5297581fa, type: 3}
