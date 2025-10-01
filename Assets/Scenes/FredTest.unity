@@ -433,6 +433,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 99c7f03ea0e1bde44ac730da50cc7e49, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LeaderboardScript
+  _leaderBoardText: {fileID: 0}
 --- !u!114 &281567735
 MonoBehaviour:
   m_ObjectHideFlags: 0
