@@ -1,17 +1,21 @@
 using System.Collections;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using UnityEngine.Serialization;
 
 public class PlayerMovement : MonoBehaviour
 {
     public PlayerMovData data;
     public Rigidbody2D Rb { get; private set; }
     public bool isDashing;
-    public bool canDash;
     public bool isStun;
     public bool isFacingRight;
+    public static bool IsInvul;
+    public float dashCooldownTimer;
     private Vector2 _moveInput;
     private InputSystem_Actions _actions;
+    public GameObject dashTrailPrefab; 
+    
     private void Awake()
     {
         Rb = GetComponent<Rigidbody2D>();
@@ -22,27 +26,37 @@ public class PlayerMovement : MonoBehaviour
     private void Start()
     {
         isFacingRight = true;
-        canDash = true;
+        dashCooldownTimer = data.dashCooldown;
     }
 
     private void Update()
     {
-        #region INPUT HANDLER
-
-        _moveInput = _actions.Player.Move.ReadValue<Vector2>();
-
-        if (_moveInput.x != 0) CheckDirectionToFace(_moveInput.x > 0);
-
-        if((_actions.Player.Jump.WasPressedThisFrame() || _actions.Player.Sprint.WasPressedThisFrame() || _actions.Player.Interact.WasPressedThisFrame()) && canDash)
+        if (!isStun)
         {
+            #region INPUT HANDLER
+
+            _moveInput = _actions.Player.Move.ReadValue<Vector2>();
+
+            if (_moveInput.x != 0) CheckDirectionToFace(_moveInput.x > 0);
+
+            if ((_actions.Player.Jump.WasPressedThisFrame() || _actions.Player.Sprint.WasPressedThisFrame() ||
+                 _actions.Player.Interact.WasPressedThisFrame()) && dashCooldownTimer <= 0)
+            {
                 StartCoroutine(Dash());
+            }
         }
+
         #endregion
+        
+        if (dashCooldownTimer > 0)
+        {
+            dashCooldownTimer -= Time.deltaTime;
+        }
     }
 
     private void FixedUpdate()
     {
-        if (!isDashing)
+        if (!isDashing && !isStun)
         {
             Run(1);
         }
@@ -103,15 +117,19 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dash()
     {
         Vector2 dashDirection = new Vector2(_moveInput.x, _moveInput.y).normalized;
-        canDash = false;
-        isDashing = true;
-        Rb.linearVelocity = dashDirection * data.dashSpeed;
-        yield return new WaitForSeconds(data.dashDuration);
-        isDashing = false;
-        yield return new WaitForSeconds(data.dashCooldown);
-        canDash = true;
+        if (dashDirection != Vector2.zero)
+        {
+            isDashing = true;
+            dashCooldownTimer = data.dashCooldown;
+            gameObject.layer = LayerMask.NameToLayer("Dash");
+            Rb.linearVelocity = dashDirection * data.dashSpeed;
+            yield return new WaitForSeconds(data.dashDuration);
+            PlayDashEffect(dashDirection, dashDistance: 1);
+            gameObject.layer = LayerMask.NameToLayer("Player");
+            isDashing = false;
+        }
     }
-    
+
 
     private void Turn()
     {
@@ -129,16 +147,40 @@ public class PlayerMovement : MonoBehaviour
             Turn();
         }
     }   
-
-    public bool CanDash()
+    
+    public void Knockback(Transform enemy, float knockbackForce, float knockbackTime, float stunTime)
     {
-        if (data.dashCooldown == 0)
-        {
-            return true;
-        }
-        return false; //might fuck with dash.
+        isStun = true;
+        StartCoroutine(StunTimer(knockbackTime, stunTime));
+        Vector2 direction = (transform.position - enemy.position).normalized; 
+        Rb.linearVelocity = direction * knockbackForce;
+        Debug.Log("Knockback applied");
     }
 
+    IEnumerator StunTimer(float knockbackTime, float stunTime)
+    {
+        IsInvul = true;
+        yield return new WaitForSeconds(knockbackTime);
+        Rb.linearVelocity = Vector2.zero;
+        yield return new WaitForSeconds(stunTime);
+        isStun = false;
+        IsInvul = false;
+    }
+    
+    void PlayDashEffect(Vector2 dashDirection, float dashDistance)
+    {
+        float angle = Mathf.Atan2(dashDirection.y, dashDirection.x) * Mathf.Rad2Deg;
+        // Compute spawn position — center of the dash path
+        Vector3 startPosition = transform.position;
+        Vector3 endPosition = startPosition + (Vector3)(dashDirection.normalized * dashDistance);
+        Vector3 midPoint = (startPosition + endPosition) / 2f;
+        
+        GameObject trail = Instantiate(dashTrailPrefab, midPoint, Quaternion.Euler(0, 0, angle));
+        trail.transform.localScale = new Vector3(dashDistance, 1f, 1f);
+        
+        Destroy(trail, 1f); 
+    }
+    
     private void OnDisable()
     {
         _actions.Disable();

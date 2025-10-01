@@ -21,3 +21,4 @@ public class EnemyChase : MonoBehaviour
         else rb.linearVelocity = new Vector3(0, 0, 0);
     }
 }
+
