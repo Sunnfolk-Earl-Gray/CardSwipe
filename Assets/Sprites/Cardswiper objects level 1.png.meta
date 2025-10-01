@@ -1,0 +1,468 @@
+fileFormatVersion: 2
+guid: 67deee879b7d6014c8b8946963d7bd3c
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 6967136356758096345
+    second: Cardswiper objects level 1_0
+  - first:
+      213: 1165835596454543817
+    second: Cardswiper objects level 1_1
+  - first:
+      213: -5575845329446641332
+    second: Cardswiper objects level 1_2
+  - first:
+      213: -2991559186661481187
+    second: Cardswiper objects level 1_3
+  - first:
+      213: 895102132149925946
+    second: Cardswiper objects level 1_4
+  - first:
+      213: 7247439121098291392
+    second: Cardswiper objects level 1_5
+  - first:
+      213: 1750668984150185959
+    second: Cardswiper objects level 1_6
+  - first:
+      213: -41380216015548471
+    second: Cardswiper objects level 1_7
+  - first:
+      213: -8412399225903166157
+    second: Cardswiper objects level 1_8
+  - first:
+      213: -8409578437762187824
+    second: Cardswiper objects level 1_9
+  - first:
+      213: -3896327205557844895
+    second: Cardswiper objects level 1_10
+  - first:
+      213: -3456667988883181715
+    second: Cardswiper objects level 1_11
+  - first:
+      213: 8805632814669020502
+    second: Cardswiper objects level 1_12
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_0
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 1149
+        width: 172
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d9864e5a9d30b060800000000000000
+      internalID: 6967136356758096345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_1
+      rect:
+        serializedVersion: 2
+        x: 669
+        y: 999
+        width: 142
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c1cd215c41ed2010800000000000000
+      internalID: 1165835596454543817
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_2
+      rect:
+        serializedVersion: 2
+        x: 1369
+        y: 969
+        width: 802
+        height: 372
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c41efc7073e9e92b0800000000000000
+      internalID: -5575845329446641332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_3
+      rect:
+        serializedVersion: 2
+        x: 339
+        y: 979
+        width: 272
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d156c7a05c8db76d0800000000000000
+      internalID: -2991559186661481187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_4
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 179
+        width: 142
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a38bd7095aa0c6c00800000000000000
+      internalID: 895102132149925946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_5
+      rect:
+        serializedVersion: 2
+        x: 679
+        y: 329
+        width: 172
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c835586b73149460800000000000000
+      internalID: 7247439121098291392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_6
+      rect:
+        serializedVersion: 2
+        x: 939
+        y: 179
+        width: 142
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7e7d0976a20ab4810800000000000000
+      internalID: 1750668984150185959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_7
+      rect:
+        serializedVersion: 2
+        x: 2229
+        y: 159
+        width: 142
+        height: 172
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cf0aaba9ecfc6ff0800000000000000
+      internalID: -41380216015548471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_8
+      rect:
+        serializedVersion: 2
+        x: 2459
+        y: 309
+        width: 172
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33d454f8977214b80800000000000000
+      internalID: -8412399225903166157
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_9
+      rect:
+        serializedVersion: 2
+        x: 2839
+        y: 309
+        width: 332
+        height: 152
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0dd766a77fc2b4b80800000000000000
+      internalID: -8409578437762187824
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_10
+      rect:
+        serializedVersion: 2
+        x: 629
+        y: 159
+        width: 272
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 164c808dc077de9c0800000000000000
+      internalID: -3896327205557844895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_11
+      rect:
+        serializedVersion: 2
+        x: 2409
+        y: 139
+        width: 272
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d6f672047c27700d0800000000000000
+      internalID: -3456667988883181715
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Cardswiper objects level 1_12
+      rect:
+        serializedVersion: 2
+        x: 2869
+        y: 139
+        width: 272
+        height: 142
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65dbed40464e33a70800000000000000
+      internalID: 8805632814669020502
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      Cardswiper objects level 1_0: 6967136356758096345
+      Cardswiper objects level 1_1: 1165835596454543817
+      Cardswiper objects level 1_10: -3896327205557844895
+      Cardswiper objects level 1_11: -3456667988883181715
+      Cardswiper objects level 1_12: 8805632814669020502
+      Cardswiper objects level 1_2: -5575845329446641332
+      Cardswiper objects level 1_3: -2991559186661481187
+      Cardswiper objects level 1_4: 895102132149925946
+      Cardswiper objects level 1_5: 7247439121098291392
+      Cardswiper objects level 1_6: 1750668984150185959
+      Cardswiper objects level 1_7: -41380216015548471
+      Cardswiper objects level 1_8: -8412399225903166157
+      Cardswiper objects level 1_9: -8409578437762187824
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class LeaderboardScript : MonoBehaviour
@@ -15,6 +16,7 @@ public class LeaderboardScript : MonoBehaviour
    }
    
   private List<Score> Scores = new List<Score>();
+  [SerializeField] private TMP_InputField _leaderBoardText;
 
    private void Awake()
    {
@@ -26,7 +28,8 @@ public class LeaderboardScript : MonoBehaviour
 
       foreach (Score score in Scores)
       {
-         Debug.Log(score.ScoreIndex + "," + score.scoreInt);
+         Debug.Log(score.ScoreIndex + ":" + score.scoreInt);
+         _leaderBoardText.text =  score.ScoreIndex + ":" + score.scoreInt + "<br>" + _leaderBoardText.text;
       }
    }
 

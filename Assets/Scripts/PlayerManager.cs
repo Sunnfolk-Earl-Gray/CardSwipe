@@ -1,6 +1,7 @@
 using System;
 using TMPro;
 using Unity.Mathematics;
+
 using UnityEngine;
 
 public class PlayerManager : MonoBehaviour
@@ -25,5 +26,6 @@ public class PlayerManager : MonoBehaviour
         {
             gameObject.SetActive(false);
         }
+
     }
 }
