@@ -3,7 +3,11 @@ using UnityEngine.Audio;
 
 public class PlayerAudioManager : MonoBehaviour
 {
-    [SerializeField] private AudioSource audioSource;
+    [SerializeField]
+    private AudioSource audioSource
+    {
+        get { return AudioManager.instance.sfxSource; }
+    }
     [SerializeField] private AudioResource DeathSound;
     [SerializeField] private AudioResource DashSound;
     [SerializeField] private AudioResource DamagedSound;
@@ -15,7 +19,7 @@ public class PlayerAudioManager : MonoBehaviour
         switch (soundName)
         {
             case "Death":
-                DontDestroyOnLoad(gameObject);
+                DontDestroyOnLoad(audioSource.gameObject);
                 audioSource.resource = DeathSound;
                 Destroy(gameObject, 4f);
                 break;
@@ -31,4 +35,5 @@ public class PlayerAudioManager : MonoBehaviour
         }
         audioSource.Play();
     }
+
 }

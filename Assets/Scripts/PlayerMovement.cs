@@ -182,7 +182,7 @@ public class PlayerMovement : MonoBehaviour
         Destroy(trail, 1f); 
     }
     
-    private void OnDisable()
+    private void OnDestroy()
     {
         _actions.Disable();
     }

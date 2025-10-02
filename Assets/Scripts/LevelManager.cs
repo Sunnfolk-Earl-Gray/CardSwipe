@@ -40,8 +40,6 @@ public class LevelManager : MonoBehaviour
             _currentLevel.UnLoad();
             _currentLevel = _levels[_levels.IndexOf(_currentLevel)+1];
             _currentLevel.SpawnEnemies();
-            var player = GameObject.FindGameObjectWithTag("Player");
-            player.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
             _fade.color = new Color(0,0,0, 0.5f + (Mathf.Sign(time)/2));
             while (_fade.color.a <= 1 && _fade.color.a >= 0)
             {
@@ -60,10 +58,10 @@ public class LevelManager : MonoBehaviour
             if (enemy == null) _currentLevel.spawnedEnemies.Remove(enemy);
         }
 
-        if (_levels.IndexOf(_currentLevel) == _levels.Count - 1 || GameObject.FindGameObjectWithTag("Player") == null)
+        if (_levels.IndexOf(_currentLevel) == _levels.Count -1 || GameObject.FindGameObjectWithTag("Player") == null)
         {
             LeaderboardScript.instance.saveScore();
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(0);
         }
         if (_currentLevel.spawnedEnemies.Count == 0 && _levels.IndexOf(_currentLevel) != _levels.Count - 1) LoadNextLevel();
     }
