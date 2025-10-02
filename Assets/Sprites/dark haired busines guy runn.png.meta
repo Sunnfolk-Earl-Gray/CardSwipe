@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 4f20bc00623d81a49bf8a67a281a7c7c
+guid: 3e898d7e57d6498418ea1c0d410901c1
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8738305821819220451
-    second: jesse idle Sheet_0
+      213: 3810409104017739777
+    second: dark haired busines guy runn_0
   - first:
-      213: 2195838683263710963
-    second: jesse idle Sheet_1
+      213: 7568266992400884757
+    second: dark haired busines guy runn_1
+  - first:
+      213: 4892085703033517437
+    second: dark haired busines guy runn_2
+  - first:
+      213: -6386364798585982774
+    second: dark haired busines guy runn_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,19 +106,6 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
     buildTarget: WebGL
     maxTextureSize: 2048
     resizeAlgorithm: 0
@@ -129,45 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jesse idle Sheet_0
+      name: dark haired busines guy runn_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 16
+        width: 10
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e13340f8d2b44970800000000000000
-      internalID: 8738305821819220451
+      spriteID: 10054e544ea41e430800000000000000
+      internalID: 3810409104017739777
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jesse idle Sheet_1
+      name: dark haired busines guy runn_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 18
         y: 0
-        width: 16
+        width: 12
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f6befbf5af297e10800000000000000
-      internalID: 2195838683263710963
+      spriteID: 5146e5f2bb2e70960800000000000000
+      internalID: 7568266992400884757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark haired busines guy runn_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d75741c070e24e340800000000000000
+      internalID: 4892085703033517437
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: dark haired busines guy runn_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac039365d031f57a0800000000000000
+      internalID: -6386364798585982774
       vertices: []
       indices: 
       edges: []
@@ -176,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 83526b800e1d94549afffb24fdfcbf1e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -184,12 +221,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      jesse idle Sheet_0: 8738305821819220451
-      jesse idle Sheet_1: 2195838683263710963
+      dark haired busines guy runn_0: 3810409104017739777
+      dark haired busines guy runn_1: 7568266992400884757
+      dark haired busines guy runn_2: 4892085703033517437
+      dark haired busines guy runn_3: -6386364798585982774
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

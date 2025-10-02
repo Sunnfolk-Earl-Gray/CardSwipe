@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3928226443508463417}
   - component: {fileID: 6156730683000565852}
   - component: {fileID: 1242299179765158500}
+  - component: {fileID: 1918922652132295125}
   m_Layer: 0
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -30,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 5.802857, y: 4.054285, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 12, y: 12, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4824451489875469657}
@@ -83,9 +84,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: cf571779d45114b29b2641744a545123, type: 3}
+  m_Sprite: {fileID: 6395313404225611284, guid: 10985f82a120029459cc8c85e41bacdd, type: 3}
   m_Color: {r: 0.9080733, g: 0.5117257, b: 0.995283, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -128,8 +129,8 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_Radius: 0.5
+  m_Offset: {x: 0.0051676435, y: 0}
+  m_Radius: 0.07816565
 --- !u!50 &6156730683000565852
 Rigidbody2D:
   serializedVersion: 5
@@ -177,7 +178,6 @@ MonoBehaviour:
   knockbackTime: 0.1
   stunTime: 0.2
   scorePopupPrefab: {fileID: 2002749766782851350, guid: 615473713ff14d34a8f9bf44f24ee0e4, type: 3}
-  hitParticles: {fileID: 0}
   rb: {fileID: 6156730683000565852}
   score: 50
   weaponRange: 1.5
@@ -191,6 +191,29 @@ MonoBehaviour:
     m_Bits: 64
   hitSound: {fileID: 0}
   player: {fileID: 0}
+  anim: {fileID: 1918922652132295125}
+--- !u!95 &1918922652132295125
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6755025500979334045}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 141513c952a4e4d40a2a06ca71876b37, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &9172312639923497946
 GameObject:
   m_ObjectHideFlags: 0
@@ -216,7 +239,7 @@ Transform:
   m_GameObject: {fileID: 9172312639923497946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1, y: 0, z: 0}
+  m_LocalPosition: {x: -0.0866667, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
