@@ -24,6 +24,7 @@ public class PlayerManager : MonoBehaviour
         health += amount;
         healthAnim.Play("HPAnimation"); 
         healthText.text = health.ToString();
+        _audioManager.PlaySound("Damaged");
        // if (amount < 0) _audioManager.PlaySound("Damaged");
         if (health <= 0)
         {
