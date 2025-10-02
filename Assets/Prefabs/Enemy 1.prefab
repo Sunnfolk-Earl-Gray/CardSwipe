@@ -180,7 +180,7 @@ MonoBehaviour:
   scorePopupPrefab: {fileID: 2002749766782851350, guid: 615473713ff14d34a8f9bf44f24ee0e4, type: 3}
   rb: {fileID: 6156730683000565852}
   score: 50
-  weaponRange: 1.5
+  weaponRange: 1
   attackCooldown: 2
   attackPoint: {fileID: 4824451489875469657}
   playerLayer:
