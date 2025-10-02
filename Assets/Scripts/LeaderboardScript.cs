@@ -1,5 +1,6 @@
 
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -103,7 +104,7 @@ public class LeaderboardScript : MonoBehaviour
 
     public void saveScore()
     {
-        AddHighscoreEntry(currentScore, "CMK");
+        AddHighscoreEntry(currentScore, GenerateRandomString(3));
     }
     private void AddHighscoreEntry(int score, string name) {
         Debug.Log("Adding highscore entry to table");
@@ -140,5 +141,14 @@ public class LeaderboardScript : MonoBehaviour
     private class HighscoreEntry {
         public int score;
         public string name;
+    }
+
+    private string GenerateRandomString(int length)
+    {
+        string allowedChars = "A,B,C,D,E,F,G,H,I,J,K,L,M,N,O,P,Q,R,S,T,U,V,W,X,Y,Z";
+        List<string> allowedCharsList = allowedChars.Split(',').ToList();
+        string returnString = allowedCharsList[Random.Range(0, allowedCharsList.Count)];
+        for (int i = 0; i < length-1; i++) returnString += allowedCharsList[Random.Range(0, allowedCharsList.Count)];
+        return returnString;
     }
 }

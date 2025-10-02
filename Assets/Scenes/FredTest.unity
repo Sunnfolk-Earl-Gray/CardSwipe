@@ -309,18 +309,6 @@ MonoBehaviour:
   DashSound: {fileID: 8300000, guid: c7dad6645c49e0240a9360bf1645e8a6, type: 3}
   DamagedSound: {fileID: 8300000, guid: 86d4f0a0d3677a04d801a407252c162b, type: 3}
   HitSound: {fileID: 8300000, guid: ded064e7860449644bfe5fb0bbab1c0b, type: 3}
---- !u!114 &403502925
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100755142}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4db26e0fbccbbde41b30602f7a970895, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerAnimationController
 --- !u!114 &407775101 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6780405666672459406, guid: e97dafa45eaa4c44da42cc0a9a58c25c, type: 3}
@@ -1026,9 +1014,6 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 6495371931104595755, guid: f104193b4aff4e241bd4780aa8ecca48, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 403502925}
     - targetCorrespondingSourceObject: {fileID: 6495371931104595755, guid: f104193b4aff4e241bd4780aa8ecca48, type: 3}
       insertIndex: -1
       addedObject: {fileID: 403502917}
