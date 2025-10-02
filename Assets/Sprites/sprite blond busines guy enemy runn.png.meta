@@ -1,13 +1,19 @@
 fileFormatVersion: 2
-guid: 4f20bc00623d81a49bf8a67a281a7c7c
+guid: 29c1bb72595990d42a8f1220e60d7c3f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8738305821819220451
-    second: jesse idle Sheet_0
+      213: 3177314991226468412
+    second: sprite blond busines guy enemy runn_0
   - first:
-      213: 2195838683263710963
-    second: jesse idle Sheet_1
+      213: 4813211812161023021
+    second: sprite blond busines guy enemy runn_1
+  - first:
+      213: -3657043732240651351
+    second: sprite blond busines guy enemy runn_2
+  - first:
+      213: -6590983061402505999
+    second: sprite blond busines guy enemy runn_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -40,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 0
+    filterMode: 1
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -54,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 128
+  spritePixelsToUnits: 100
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -78,19 +84,6 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 0
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Standalone
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
     textureCompression: 1
     compressionQuality: 50
     crunchedCompression: 0
@@ -100,7 +93,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: Android
+    buildTarget: Standalone
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -129,45 +122,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: jesse idle Sheet_0
+      name: sprite blond busines guy enemy runn_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 2
         y: 0
-        width: 16
+        width: 10
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e13340f8d2b44970800000000000000
-      internalID: 8738305821819220451
+      spriteID: c38b39f7627181c20800000000000000
+      internalID: 3177314991226468412
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: jesse idle Sheet_1
+      name: sprite blond busines guy enemy runn_1
       rect:
         serializedVersion: 2
-        x: 16
+        x: 18
         y: 0
-        width: 16
+        width: 12
         height: 16
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3f6befbf5af297e10800000000000000
-      internalID: 2195838683263710963
+      spriteID: d2c629444a6fbc240800000000000000
+      internalID: 4813211812161023021
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite blond busines guy enemy runn_2
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 0
+        width: 9
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ab2ab3f9129f3dc0800000000000000
+      internalID: -3657043732240651351
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sprite blond busines guy enemy runn_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 12
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1fcac7083df1884a0800000000000000
+      internalID: -6590983061402505999
       vertices: []
       indices: 
       edges: []
@@ -176,7 +213,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 83526b800e1d94549afffb24fdfcbf1e
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -184,12 +221,12 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries:
-      - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":16.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+      entries: []
     nameFileIdTable:
-      jesse idle Sheet_0: 8738305821819220451
-      jesse idle Sheet_1: 2195838683263710963
+      sprite blond busines guy enemy runn_0: 3177314991226468412
+      sprite blond busines guy enemy runn_1: 4813211812161023021
+      sprite blond busines guy enemy runn_2: -3657043732240651351
+      sprite blond busines guy enemy runn_3: -6590983061402505999
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

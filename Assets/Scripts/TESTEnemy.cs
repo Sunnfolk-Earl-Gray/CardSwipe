@@ -12,7 +12,6 @@ public class TESTEnemy : MonoBehaviour
     [SerializeField] private float knockbackTime;
     [SerializeField] private float stunTime;
     public GameObject scorePopupPrefab; 
-    public GameObject hitParticles;
     [SerializeField] private Rigidbody2D rb;
 
     public int score = 50;
@@ -22,21 +21,21 @@ public class TESTEnemy : MonoBehaviour
     public LayerMask playerLayer;
     public LayerMask dashLayer;
     public AudioClip hitSound;
+    private bool isChasing = false;
+    private bool isAttacking = false;
     private AudioSource audioSource;
     private PlayerMovement _playerMovement;
     private int _facingDirection = -1;
     private float _attackCooldownTimer;
     public Transform player;
     private Transform _enemy;
-    private EnemyState _enemyState;
-    private Animator _anim;
+    public Animator anim;
     private ScoreAppear _scorePopup;
     
     private void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").transform;
         player = GameObject.FindGameObjectWithTag("Player").transform;
-        ChangeState(_enemyState = EnemyState.Chasing);
         _playerMovement = player.GetComponent<PlayerMovement>();
         _enemy = gameObject.GetComponent<Transform>();
         audioSource = GetComponent<AudioSource>();
@@ -44,14 +43,11 @@ public class TESTEnemy : MonoBehaviour
 
     private void Update()
     {
-        if (_enemyState == EnemyState.Chasing)
-        {
-            if (player.position.x > transform.position.x && _facingDirection == -1 ||
+        if (player.position.x > transform.position.x && _facingDirection == -1 ||
                 player.position.x < transform.position.x && _facingDirection == 1)
             {
                 Flip();
             }
-        }
         
         if (_attackCooldownTimer > 0)
         {
@@ -61,14 +57,9 @@ public class TESTEnemy : MonoBehaviour
     
     private void FixedUpdate()
     {
-        if (_enemyState == EnemyState.Chasing)
+        if (!isAttacking)
         {
            Chase();
-        }
-
-        if (_enemyState == EnemyState.Attack)
-        {
-            Attack();
         }
     }
 
@@ -80,18 +71,21 @@ public class TESTEnemy : MonoBehaviour
     
     private void Chase()
     {
+        anim.Play("Chase");
         var heading = target.position - transform.position;
         var distance = heading.magnitude;
         heading = heading / distance;
         if (distance >= attackDistance) rb.linearVelocity = heading * speed;
         else if (_attackCooldownTimer <= 0)
         {
-            ChangeState(EnemyState.Attack);
+            anim.Play("Enemy1AtkAnimation");
         }
     }
 
     private void Attack()
     {
+        isChasing = false;
+        isAttacking = true;
         rb.linearVelocity = new Vector3(0, 0, 0);
         _attackCooldownTimer = attackCooldown;
         Debug.Log("Attacking player now");
@@ -129,30 +123,11 @@ public class TESTEnemy : MonoBehaviour
                 Debug.Log("Score Popup Null");
             }
         }
-        ChangeState(EnemyState.Chasing);
+        isAttacking  = false;
+        isChasing = true;
     }
 
-    void ChangeState(EnemyState  newState)
-    {
-        //exit current animation
-        /*if (_enemyState == EnemyState.Chasing)
-            _anim.SetBool("isChasing", false);
-        else if (_enemyState == EnemyState.Attack)
-            _anim.SetBool("isAttack", false);
-        */
-        
-        //update state
-        _enemyState = newState;
-        
-        /*
-        //update to current animation
-        if (_enemyState == EnemyState.Chasing)
-            _anim.SetBool("isChasing", true);
-        else if (_enemyState == EnemyState.Attack)
-            _anim.SetBool("isAttack", true);
-            */
-    }
-    
+
     void PlayHitSound()
     {
         if (hitSound != null)
@@ -164,10 +139,4 @@ public class TESTEnemy : MonoBehaviour
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, weaponRange);
     }
-}
-
-public enum EnemyState
-{
-    Chasing,
-    Attack,
 }

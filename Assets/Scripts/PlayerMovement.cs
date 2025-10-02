@@ -8,8 +8,10 @@ public class PlayerMovement : MonoBehaviour
     public PlayerMovData data;
     public Rigidbody2D Rb { get; private set; }
     public bool isDashing;
+    private bool isRunning;
     public bool isStun;
-    public bool isFacingRight;
+    public bool isFacingRight;    
+    public Animator anim;
     public static bool IsInvul;
     public float dashCooldownTimer;
     private Vector2 _moveInput;
@@ -60,6 +62,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Run(1);
         }
+        
+        anim.SetFloat("horizontal", Mathf.Abs(Rb.linearVelocity.x));
+        anim.SetFloat("vertical", Mathf.Abs(Rb.linearVelocity.y));
     }
     
     private void Run(float lerpAmount)
@@ -110,22 +115,23 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError($"[NaN] movement={movement}, targetSpeed={targetSpeed}, currentVelocity={currentVelocity}");
             return;
         }
-
+        
         Rb.AddForce(movement, ForceMode2D.Force);
     }
 
     IEnumerator Dash()
     {
-        gameObject.GetComponent<PlayerAudioManager>().PlaySound("Dash");
+        // gameObject.GetComponent<PlayerAudioManager>().PlaySound("Dash");
         Vector2 dashDirection = new Vector2(_moveInput.x, _moveInput.y).normalized;
         if (dashDirection != Vector2.zero)
         {
             isDashing = true;
+            anim.Play("Dash");
             dashCooldownTimer = data.dashCooldown;
             gameObject.layer = LayerMask.NameToLayer("Dash");
             Rb.linearVelocity = dashDirection * data.dashSpeed;
             yield return new WaitForSeconds(data.dashDuration);
-            PlayDashEffect(dashDirection, dashDistance: 1);
+            PlayDashEffect(dashDirection, dashDistance: 0.5f);
             gameObject.layer = LayerMask.NameToLayer("Player");
             isDashing = false;
         }
@@ -147,8 +153,9 @@ public class PlayerMovement : MonoBehaviour
         {
             Turn();
         }
-    }   
-    
+    }
+
+    #region Knockback/Stun
     public void Knockback(Transform enemy, float knockbackForce, float knockbackTime, float stunTime)
     {
         isStun = true;
@@ -167,6 +174,7 @@ public class PlayerMovement : MonoBehaviour
         isStun = false;
         IsInvul = false;
     }
+    #endregion
     
     void PlayDashEffect(Vector2 dashDirection, float dashDistance)
     {
@@ -181,7 +189,8 @@ public class PlayerMovement : MonoBehaviour
         
         Destroy(trail, 1f); 
     }
-    
+        
+        
     private void OnDisable()
     {
         _actions.Disable();
