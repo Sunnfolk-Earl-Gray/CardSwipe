@@ -10,12 +10,14 @@ public class LeaderboardScript : MonoBehaviour
     [SerializeField]private Transform entryContainer;
     private Transform entryTemplate;
     private List<Transform> highscoreEntryTransformList;
+    private InputSystem_Actions _actions;
 
     public int currentScore;
     public static LeaderboardScript instance;
 
     private void Awake() {
-        //PlayerPrefs.DeleteAll();
+        _actions = new InputSystem_Actions();
+        _actions.Enable();
         if (instance == null) instance = this;
         else if (instance != this) Destroy(this);
         
@@ -102,6 +104,11 @@ public class LeaderboardScript : MonoBehaviour
         transformList.Add(entryTransform);
     }
 
+    private void Update()
+    {
+        if (_actions.Player.ResetScores.WasPressedThisFrame()) PlayerPrefs.DeleteAll();
+    }
+
     public void saveScore()
     {
         AddHighscoreEntry(currentScore, GenerateRandomString(3));
@@ -150,5 +157,10 @@ public class LeaderboardScript : MonoBehaviour
         string returnString = allowedCharsList[Random.Range(0, allowedCharsList.Count)];
         for (int i = 0; i < length-1; i++) returnString += allowedCharsList[Random.Range(0, allowedCharsList.Count)];
         return returnString;
+    }
+
+    private void OnDestroy()
+    {
+        _actions.Disable();
     }
 }
