@@ -128,15 +128,20 @@ public class PlayerMovement : MonoBehaviour
             isDashing = true;
             anim.Play("Dash");
             dashCooldownTimer = data.dashCooldown;
-            gameObject.layer = LayerMask.NameToLayer("Dash");
+            StartCoroutine(Dashing());
             Rb.linearVelocity = dashDirection * data.dashSpeed;
             yield return new WaitForSeconds(data.dashDuration);
             PlayDashEffect(dashDirection, dashDistance: 0.5f);
-            gameObject.layer = LayerMask.NameToLayer("Player");
             isDashing = false;
         }
     }
 
+    IEnumerator Dashing()
+    {
+        gameObject.layer = LayerMask.NameToLayer("Dash");
+        yield return new WaitForSeconds(0.4f);
+        gameObject.layer = LayerMask.NameToLayer("Player");
+    }
 
     private void Turn()
     {

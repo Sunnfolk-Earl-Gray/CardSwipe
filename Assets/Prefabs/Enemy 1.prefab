@@ -181,7 +181,7 @@ MonoBehaviour:
   scorePopupPrefab: {fileID: 2002749766782851350, guid: 615473713ff14d34a8f9bf44f24ee0e4, type: 3}
   rb: {fileID: 6156730683000565852}
   score: 50
-  weaponRange: 1
+  weaponRange: 2
   attackCooldown: 2
   attackPoint: {fileID: 4824451489875469657}
   playerLayer:
@@ -253,7 +253,7 @@ Transform:
   m_GameObject: {fileID: 9172312639923497946}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.0866667, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 2, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
