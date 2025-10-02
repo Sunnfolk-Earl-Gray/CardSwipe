@@ -11,6 +11,11 @@ public class LevelScript : ScriptableObject
     [SerializeField] private GameObject LevelSprite;
     private GameObject LevelInstance;
 
+    private GameObject player
+    {
+        get { return GameObject.FindWithTag("Player"); }
+    }
+
     public void SpawnEnemies()
     {
         spawnedEnemies.Clear();
@@ -24,10 +29,16 @@ public class LevelScript : ScriptableObject
             Debug.Log("Spawned Enemy");
             enemy.GetComponent<TESTEnemy>().enabled = false;
         }
+        
     }
 
     public void ActivateLevel()
     {
+        player.transform.position = GameObject.FindGameObjectWithTag("PlayerSpawn").transform.position;
+        player.GetComponent<BoxCollider2D>().enabled = true;
+        player.GetComponent<SpriteRenderer>().enabled = true;
+        player.GetComponent<PlayerMovement>().enabled = true;
+        player.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         foreach (var enemy in spawnedEnemies)
         {
             enemy.GetComponent<TESTEnemy>().enabled = true;
@@ -36,6 +47,10 @@ public class LevelScript : ScriptableObject
 
     public void UnLoad()
     {
+        
+        player.GetComponent<PlayerMovement>().enabled = false;
+        player.GetComponent<SpriteRenderer>().enabled = false;
+        player.GetComponent<BoxCollider2D>().enabled = false;
         foreach (GameObject enemy in spawnedEnemies) Destroy(enemy);
         Destroy(LevelInstance);
     }

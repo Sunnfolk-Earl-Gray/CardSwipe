@@ -18,9 +18,9 @@ public class LeaderboardScript : MonoBehaviour
         if (instance == null) instance = this;
         else if (instance != this) Destroy(this);
         
-        entryTemplate = entryContainer.Find("EntryTemplate");
-        if (entryContainer != null && entryTemplate != null)
+        if (entryContainer != null)
         {
+            entryTemplate = entryContainer.Find("EntryTemplate");
             entryTemplate.gameObject.SetActive(false);
         }
 
@@ -41,7 +41,7 @@ public class LeaderboardScript : MonoBehaviour
             highscores = JsonUtility.FromJson<Highscores>(jsonString);
         }
         */
-
+    if (entryContainer == null || highscores == null) return;
         // Sort entry list by Score
         for (int i = 0; i < highscores.highscoreEntryList.Count; i++) {
             for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++) {
@@ -65,7 +65,9 @@ public class LeaderboardScript : MonoBehaviour
         }
     }
 
-    private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList) {
+    private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
+    {
+        if (transformList.Count + 1 > 10)  return;
         Debug.Log("Creating highscore entry transform");
         float templateHeight = 10f;
         Transform entryTransform = Instantiate(entryTemplate, container);
