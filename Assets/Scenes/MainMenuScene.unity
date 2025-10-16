@@ -330,8 +330,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -12.8, y: 14}
-  m_SizeDelta: {x: 0.064, y: 0.064}
+  m_AnchoredPosition: {x: -287.0346, y: 316.7799}
+  m_SizeDelta: {x: 1.4568, y: 1.463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &601390552
 GameObject:
@@ -608,8 +608,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.000063419, y: -0.00013185}
-  m_SizeDelta: {x: 90.22, y: 45.11}
+  m_AnchoredPosition: {x: 4.3348, y: -3.2507}
+  m_SizeDelta: {x: 2053.683, y: 1031.1759}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &632000694
 MonoBehaviour:
@@ -658,6 +658,7 @@ GameObject:
   - component: {fileID: 692564119}
   - component: {fileID: 692564118}
   - component: {fileID: 692564121}
+  - component: {fileID: 692564122}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -708,7 +709,7 @@ Camera:
   far clip plane: 1000
   field of view: 60
   orthographic: 1
-  orthographic size: 1.02
+  orthographic size: 2
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -783,6 +784,30 @@ MonoBehaviour:
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
   m_Version: 2
+--- !u!114 &692564122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692564117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c88f5cead0c0b2a4eb05b5900433f8d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.RenderPipelines.Universal.2D.Runtime::UnityEngine.Rendering.Universal.PixelPerfectCamera
+  m_ComponentVersion: 1
+  m_AssetsPPU: 128
+  m_RefResolutionX: 1024
+  m_RefResolutionY: 512
+  m_CropFrame: 0
+  m_GridSnapping: 0
+  m_FilterMode: 0
+  m_UpscaleRT: 0
+  m_PixelSnapping: 0
+  m_CropFrameX: 0
+  m_CropFrameY: 0
+  m_StretchFill: 0
 --- !u!1 &749830826
 GameObject:
   m_ObjectHideFlags: 0
@@ -998,8 +1023,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 35, y: 15}
-  m_SizeDelta: {x: 80.03, y: 51.76}
+  m_AnchoredPosition: {x: 801.03906, y: 339.63916}
+  m_SizeDelta: {x: 1821.7275, y: 1183.189}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &824241350
 MonoBehaviour:
@@ -1140,8 +1165,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 14.8, y: 14}
-  m_SizeDelta: {x: 0.064, y: 0.064}
+  m_AnchoredPosition: {x: 341.22644, y: 316.7799}
+  m_SizeDelta: {x: 1.4568, y: 1.463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1150461844
 GameObject:
@@ -1493,8 +1518,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -35.7, y: -0.68}
-  m_SizeDelta: {x: 110, y: 170}
+  m_AnchoredPosition: {x: -808.3093, y: -18.7921}
+  m_SizeDelta: {x: 2503.9365, y: 3886.0535}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1762220602
 MonoBehaviour:
@@ -1569,8 +1594,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.052, y: 13.6}
-  m_SizeDelta: {x: 1.5, y: 1.4}
+  m_AnchoredPosition: {x: 3.1484, y: 307.6358}
+  m_SizeDelta: {x: 34.1445, y: 32.0028}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1770344433
 Animator:
@@ -1679,6 +1704,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LeaderboardScript
   entryContainer: {fileID: 1762220600}
   currentScore: 0
+  _scoreText: {fileID: 0}
 --- !u!114 &1817759008
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1730,8 +1756,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.3, y: 14}
-  m_SizeDelta: {x: 0.064, y: 0.064}
+  m_AnchoredPosition: {x: -2.4965, y: 316.7799}
+  m_SizeDelta: {x: 1.4568, y: 1.463}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1897926450
 GameObject:
@@ -1781,10 +1807,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.CanvasScaler
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 128
   m_ScaleFactor: 22.7
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 2048, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -1801,17 +1827,17 @@ Canvas:
   m_GameObject: {fileID: 1897926450}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 1
+  m_RenderMode: 0
   m_Camera: {fileID: 692564119}
   m_PlaneDistance: 1
-  m_PixelPerfect: 0
+  m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 1
   m_AdditionalShaderChannelsFlag: 25
-  m_UpdateRectTransformForStandalone: 1
+  m_UpdateRectTransformForStandalone: 0
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0

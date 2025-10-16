@@ -15,4 +15,4 @@ MonoBehaviour:
   Enemies: []
   spawnedEnemies: []
   EnemySpawns: []
-  LevelSprite: {fileID: 4988722899022972522, guid: 8dfdc0efc332e434eab4bb3c94de9992, type: 3}
+  LevelSprite: {fileID: 0}

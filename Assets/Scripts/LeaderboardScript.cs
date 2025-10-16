@@ -13,6 +13,8 @@ public class LeaderboardScript : MonoBehaviour
     private InputSystem_Actions _actions;
 
     public int currentScore;
+
+    [SerializeField] private TMP_Text _scoreText;
     public static LeaderboardScript instance;
 
     private void Awake() {
@@ -27,6 +29,15 @@ public class LeaderboardScript : MonoBehaviour
             entryTemplate.gameObject.SetActive(false);
         }
 
+        try
+        {
+            _scoreText = GameObject.FindGameObjectWithTag("ScoreUI").GetComponent<TMP_Text>();
+
+        }
+        catch
+        {
+            _scoreText = null;
+        }
         string jsonString = PlayerPrefs.GetString("highscoreTable");
         Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
     /*
@@ -107,6 +118,7 @@ public class LeaderboardScript : MonoBehaviour
     private void Update()
     {
         if (_actions.Player.ResetScores.WasPressedThisFrame()) PlayerPrefs.DeleteAll();
+        if(_scoreText != null) _scoreText.text = currentScore.ToString();
     }
 
     public void saveScore()

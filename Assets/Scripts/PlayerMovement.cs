@@ -139,7 +139,7 @@ public class PlayerMovement : MonoBehaviour
     IEnumerator Dashing()
     {
         gameObject.layer = LayerMask.NameToLayer("Dash");
-        yield return new WaitForSeconds(0.4f);
+        yield return new WaitForSeconds(0.3f);
         gameObject.layer = LayerMask.NameToLayer("Player");
     }
 

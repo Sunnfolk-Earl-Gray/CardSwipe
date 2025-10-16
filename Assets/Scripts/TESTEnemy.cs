@@ -1,6 +1,4 @@
-using System;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class TESTEnemy : MonoBehaviour
 {
@@ -72,6 +70,7 @@ public class TESTEnemy : MonoBehaviour
     private void Chase()
     {
         anim.Play("Chase");
+        if (target == null) return;
         var heading = target.position - transform.position;
         var distance = heading.magnitude;
         heading = heading / distance;
@@ -138,5 +137,10 @@ public class TESTEnemy : MonoBehaviour
     {
         Gizmos.color = Color.red;
         Gizmos.DrawWireSphere(attackPoint.position, weaponRange);
+    }
+
+    private void OnDestroy()
+    {
+        LevelManager.Instance._currentLevel.spawnedEnemies.Remove(gameObject);
     }
 }
