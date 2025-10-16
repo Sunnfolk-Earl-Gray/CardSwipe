@@ -81,13 +81,13 @@ public class LeaderboardScript : MonoBehaviour
 
     private void CreateHighscoreEntryTransform(HighscoreEntry highscoreEntry, Transform container, List<Transform> transformList)
     {
-        if (transformList.Count + 1 > 10)  return;
+        if (transformList.Count + 1 > 15)  return;
         Debug.Log("Creating highscore entry transform");
-        float templateHeight = 10f;
+        float templateHeight = 150f;
         Transform entryTransform = Instantiate(entryTemplate, container);
         RectTransform entryRectTransform = entryTransform.GetComponent<RectTransform>();
         Debug.Log(transformList);
-        entryRectTransform.anchoredPosition = new Vector2(0, -templateHeight * transformList.Count);
+        entryRectTransform.anchoredPosition += new Vector2(0, -templateHeight * transformList.Count);
         entryTransform.gameObject.SetActive(true);
 
         int rank = transformList.Count + 1;
